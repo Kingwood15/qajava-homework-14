@@ -56,7 +56,8 @@ public class TicketManager {
                 result = tmp;
             }
         }
-        Arrays.sort(result,comparator);  //вызов сортировки
+        Arrays.sort(result); //сортировка по цене
+        Arrays.sort(result,comparator);  //сортировка по времени пути
         return result;
     }
 

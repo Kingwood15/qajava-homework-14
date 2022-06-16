@@ -40,7 +40,7 @@ public class TicketTest {
         manager.add(ticket14);
 
         Ticket[] actual = manager.findAll("", "", comparator);
-        Ticket[] expected = {ticket12, ticket1, ticket6, ticket8, ticket3, ticket4, ticket9, ticket14, ticket2, ticket5, ticket7, ticket13, ticket10};
+        Ticket[] expected = {ticket12, ticket6, ticket1, ticket8, ticket4, ticket9, ticket3, ticket14, ticket5, ticket2, ticket7, ticket13, ticket10};
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -132,7 +132,7 @@ public class TicketTest {
         manager.removeById(1);
 
         Ticket[] actual1 = manager.findAll("", "", comparator);
-        Ticket[] expected1 = {ticket6, ticket8, ticket3, ticket4, ticket9, ticket2, ticket5, ticket7, ticket10};
+        Ticket[] expected1 = {ticket6, ticket8, ticket4, ticket9, ticket3, ticket5, ticket2, ticket7, ticket10};
 
         Assertions.assertArrayEquals(expected1, actual1);
 
