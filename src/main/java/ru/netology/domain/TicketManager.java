@@ -42,7 +42,7 @@ public class TicketManager {
     }
 
     //метод вывода билетов по направлениям
-    public Ticket[] findAll(String from, String to) {
+    public Ticket[] findAll(String from, String to, TicketByRouteTimeAscComparator comparator) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repository.findAll()) {
             if (matches(ticket, from, to)) {
@@ -56,7 +56,8 @@ public class TicketManager {
                 result = tmp;
             }
         }
-        Arrays.sort(result);  //вызов сортировки
+        Arrays.sort(result); //сортировка по цене
+        Arrays.sort(result,comparator);  //сортировка по времени пути
         return result;
     }
 
